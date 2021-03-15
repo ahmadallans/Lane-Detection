@@ -49,11 +49,11 @@ def display_lines(image, lines):
         #for line in lines:
         for line in lines:
             x1, y1, x2, y2 = line.reshape(4)
-            #for x1, y1, x2, y2 in x:    
+            #for x1, y1, x2, y2 in x:
             cv2.line(line_image,(x1, y1), (x2, y2), (0, 255 , 255), 10)
     return line_image
 
-image = cv2.imread('test5.jpg')
+image = cv2.imread('test_image.jpg')
 lane_image = np.copy(image)
 canny_image = canny(lane_image)
 cropped_image = region_of_interest(canny_image)
